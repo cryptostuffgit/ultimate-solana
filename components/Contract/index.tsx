@@ -24,7 +24,7 @@ const Contract = ({program, idl}: ContractProps) => {
     };
 
   return (
-    <div className="">
+    <div className="contract-container">
         {idl.instructions.map((method, index) => {
             return(
                 <Accordion expanded={expanded === index.toString()} onChange={handleChange(index.toString())}>

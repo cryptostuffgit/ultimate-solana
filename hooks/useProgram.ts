@@ -57,9 +57,10 @@ export const useMethods = () => {
         accounts[element.name] = new PublicKey(args[element.name]);
       }
     })
-    
+
     try {
-      const tx = await program.methods[method.name](params)
+      const methodWithParams = Object.keys(params).length == 0 ? program.methods[method.name]() : program.methods[method.name](params)
+      const tx = await methodWithParams
         .accounts(accounts)
         .rpc()
         .catch(e => {
