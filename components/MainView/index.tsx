@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import * as anchor from '@project-serum/anchor';
 import useProgram from "../../hooks/useProgram";
 import Contract from 'components/Contract';
+import Getter from 'components/Getter';
 
 const MainView = ({connected}) => {
   const wallet = useWallet();
@@ -46,6 +47,7 @@ const MainView = ({connected}) => {
         <Button className="program-address-button" variant="contained" onClick={findProgramAddress}>Find Program</Button>
       </div>
       {program && idl && <Contract program={program} idl={idl}/>}
+      {program && idl && <Getter program={program} idl={idl}/>}
     </div>
   );
 };
