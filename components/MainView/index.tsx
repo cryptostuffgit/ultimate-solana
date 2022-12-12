@@ -38,7 +38,7 @@ const MainView = ({connected}) => {
 
   return (
     <div className="main-container">
-      <ToastContainer align={"right"} position={"bottom"} />
+      <ToastContainer className={"toast-container"} align={"right"} position={"bottom"} />
       <h1 className="heading">
         Ultimate Solana Frontend
       </h1>
@@ -47,6 +47,7 @@ const MainView = ({connected}) => {
         <Button className="program-address-button" variant="contained" onClick={findProgramAddress}>Find Program</Button>
       </div>
       {program && idl && <Contract program={program} idl={idl}/>}
+      <br/>
       {program && idl && <Getter program={program} idl={idl}/>}
     </div>
   );
